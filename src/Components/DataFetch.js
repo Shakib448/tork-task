@@ -34,35 +34,38 @@ const DataFetch = () => {
     fetchPostData();
   }, []);
   return (
-    <div>
-      <h1>This is Get Data</h1>
-      <h2>{getData.csrf_token}</h2>
-      <h1>This is Post Data</h1>
+    <>
       {postData.length === 0 ? (
         "Loading..."
       ) : (
         <div>
-          {postData.map((item, index) => (
-            <div key={index}>
-              <div>
-                <hr />
-                <Link to={`/fetch-details/${item.id}`}>
-                  <h1>ID : {item.id}</h1>
-                </Link>
-                <h1>Course Title : {item.course_title}</h1>
-                <h1>End Time : {item.ending_time}</h1>
-                <h1>Live type : {item.live_type}</h1>
-                <h1>Meeting password :{item.meeting_password}</h1>
-                <h1>Starting Time{item.starting_time}</h1>
-                <h1>Title : {item.title}</h1>
-                <h1>User ID : {item.user_id}</h1>
-                <h1>User Name : {item.user_name}</h1>
+          <h1>This is Get Data</h1>
+          <h2>{getData.csrf_token}</h2>
+          <h1>This is Post Data</h1>
+
+          <div>
+            {postData.map((item, index) => (
+              <div key={index}>
+                <div>
+                  <hr />
+                  <Link to={`/fetch-details/${item.id}`}>
+                    <h1>ID : {item.id}</h1>
+                  </Link>
+                  <h1>Course Title : {item.course_title}</h1>
+                  <h1>End Time : {item.ending_time}</h1>
+                  <h1>Live type : {item.live_type}</h1>
+                  <h1>Meeting password :{item.meeting_password}</h1>
+                  <h1>Starting Time{item.starting_time}</h1>
+                  <h1>Title : {item.title}</h1>
+                  <h1>User ID : {item.user_id}</h1>
+                  <h1>User Name : {item.user_name}</h1>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       )}
-    </div>
+    </>
   );
 };
 
